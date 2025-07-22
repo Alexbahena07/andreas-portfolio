@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="about">
+  <img
+    class="portrait"
+    src="{{ url_for('static', filename='img/andrea_pic.jpg') }}"
+    alt="Portrait of {{ artist_name | default('me') }}"
+    width="300" height="300"
+  >
+
+  <div class="statement">
+    <h1>Artist Statement</h1>
+    <p>
+      I’m an eclectic, outgoing creative with a deep passion for both children and the arts. I draw from my multifaceted 
+      identity to express myself through sculpture, fiber art, and teaching. Whether I’m in the studio or the classroom, I 
+      strive to bring a bit of sunshine to everyone I meet and to spark hope and inspiration in the children I have the 
+      privilege of teaching.
+    </p>
+    <p>
+      <em>queer feminist creative</em>
+    </p>
+  </div>
+
+  <div class="row contact-form">
+
+   	<div >
+      <!--Update form on this website: https://formsubmit.co/?utm_source=formsubmit.co&utm_medium=site%20link&utm_campaign=submission%20page -->
+      <form action="https://formsubmit.co/809043f171bcb49efc8b2bb1ecbf94db" method="POST">
+  
+        <input type="text" name="name"  placeholder="Name">
+        <input type="email" name="email"  placeholder="Email"> 
+        <input type="text" name="subject"  placeholder="Subject">
+        <textarea name="message"   placeholder="Message"></textarea> 
+
+        <div class="form-field"></div>
+          <button class="submitform" type="submit">Submit</button>
+        </div>
+          
+      </form>
+
+      <!-- contact-warning -->
+      <div id="message-warning">            	
+      </div>            
+      <!-- contact-success -->
+      <div id="message-success">
+          <i class="fa fa-check"></i>Your message was sent, thank you!<br>
+      </div>
+
+    </div> <!-- /col-twelve -->
+   		
+  </div> <!-- /contact-form -->
+
+</section>
+
+
+
+{% endblock %}

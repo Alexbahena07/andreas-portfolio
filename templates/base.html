@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- 1 ▸ load Font Awesome once, ideally in <head> of base.html -->
+        <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-CzE1ug…long‑hash…" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <!-- end of loading in content-->
+        <meta charset="utf-8">
+        <title>{% block title %}{{ page_title }} · My Portfolio{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+
+    <body>
+    {% include 'partials/header.html' %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include 'partials/footer.html' %}
+    </body>
+
+</html>

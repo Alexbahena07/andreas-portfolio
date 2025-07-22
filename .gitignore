@@ -1,0 +1,21 @@
+# ── Python / Flask ───────────────────────────────
+__pycache__/
+*.py[cod]
+*.sqlite3
+instance/          # if you use Flask instance folder
+
+# ── Virtual‑env ───────────────────────────────────
+env/
+venv/
+.venv/
+
+# ── Node / Webpack (if you ever add it) ──────────
+node_modules/
+dist/
+static/js/bundle.js
+static/img/uploads/
+
+# ── OS / Editor cruft ────────────────────────────
+.DS_Store
+.idea/
+.vscode/

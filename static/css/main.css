@@ -1,0 +1,188 @@
+/* ───────────────────────────────────────────────
+   GLOBAL / RESET
+   ──────────────────────────────────────────── */
+body{
+  font-family: system-ui, sans-serif;
+  margin:0;
+  padding:0;
+  line-height:1.5;
+}
+
+
+/* ───────────────────────────────────────────────
+   HERO SECTION  (index.html)
+   ──────────────────────────────────────────── */
+.hero{
+  min-height:60vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:#f1f3f5;
+  text-align:center;
+}
+.hero h1{font-size:clamp(2rem,5vw,3.5rem);}
+.artist{color:#FFC5D3;}
+
+/* make the inline “about” link stand out just a bit */
+.hero .about-link{
+  text-decoration:underline;
+  font-weight:600;
+}
+
+
+/* ───────────────────────────────────────────────
+   ABOUT SECTION  (about.html)
+   ──────────────────────────────────────────── */
+.about{
+  max-width:900px;
+  margin:4rem auto 6rem;
+  padding:0 1rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:2rem;
+  align-items:center;
+}
+.portrait{
+  flex:0 0 300px;
+  border-radius:50%;
+  object-fit:cover;
+  box-shadow:0 2px 8px rgba(0,0,0,.15);
+}
+.statement{
+  flex:1 1 300px;
+}
+.statement h1{
+  margin-top:0;
+  font-size:clamp(1.8rem,3vw,2.4rem);
+}
+
+
+/* ───────────────────────────────────────────────
+   HEADER / NAV  (partials/header.html)
+   ──────────────────────────────────────────── */
+.site-header{
+  width:100%;
+  background:#fff;
+  box-shadow:0 1px 4px rgba(0,0,0,.06);
+}
+.nav{
+  max-width:1200px;
+  margin-inline:auto;
+  padding:1rem clamp(1rem,4vw,2.5rem);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.brand{
+  font-weight:700;
+  font-size:clamp(1.1rem,2vw,1.35rem);
+  text-decoration:none;
+  color:#000;
+}
+.nav-links{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  gap:2rem;
+}
+.nav-links a{
+  text-decoration:none;
+  font-weight:500;
+  color:#000;
+  position:relative;
+}
+/* subtle underline on hover / focus */
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0; bottom:-4px;
+  width:0; height:2px;
+  background:#e91e63;      /* accent pink */
+  transition:width .25s ease;
+}
+.nav-links a:hover::after,
+.nav-links a:focus::after{width:100%;}
+
+
+/* ───────────────────────────────────────────────
+   CONTACT FORM  (about.html)
+   ──────────────────────────────────────────── */
+.contact-form{
+  max-width:600px;
+  margin:3rem auto;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea{
+  width:100%;
+  font:inherit;
+  padding:.75rem 1rem;
+  margin-bottom:1.1rem;
+  border:1px solid #d3d3d3;
+  border-radius:.35rem;
+  background:#fafafa;
+  transition:border-color .2s ease;
+}
+.contact-form textarea{
+  min-height:8rem;
+  resize:vertical;
+}
+.contact-form input:focus,
+.contact-form textarea:focus{
+  outline:none;
+  border-color:#e95486;    /* accent pink */
+}
+/* submit button */
+.contact-form .submitform{
+  display:inline-block;
+  padding:.75rem 2.5rem;
+  background:#e95486;
+  color:#fff;
+  border:none;
+  border-radius:.35rem;
+  cursor:pointer;
+  font-weight:600;
+  letter-spacing:.5px;
+  transition:background .2s ease;
+}
+.contact-form .submitform:hover,
+.contact-form .submitform:focus{
+  background:#c63a6a;      /* darker on hover */
+}
+/* success & warning messages */
+#message-success,
+#message-warning{
+  margin-top:1rem;
+  font-size:.9rem;
+  display:none;
+}
+#message-success i{margin-right:.35rem;color:#28a745;}
+#message-warning{color:#dc3545;}
+#message-success{color:#28a745;}
+
+
+/* ───────────────────────────────────────────────
+   FOOTER  (partials/footer.html)
+   ──────────────────────────────────────────── */
+.site-footer{
+  padding:2rem 0;
+  text-align:center;
+}
+.footer-social{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:inline-flex;
+  gap:1.5rem;
+}
+.footer-social a{
+  font-size:1.75rem;
+  color:#e95486;
+  transition:color .2s ease;
+}
+.footer-social a:hover,
+.footer-social a:focus{
+  color:#444;
+}
